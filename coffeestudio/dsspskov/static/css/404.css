@@ -1,0 +1,145 @@
+@charset "UTF-8";
+/**
+ * Преобразование пикселей в rem на основе переменной с базовым размером шрифта.
+ * @param  {number} $px Число пикселей (с единицами измерения или без)
+ * @param  {string} Число пикселей, размер контентного шрифта на проекте
+ * @return {string} Результат преобразования $px в rem
+ */
+/*------------------------------------*\
+  # Transitions
+\*------------------------------------*/
+.error-page__wrapper {
+    padding-top: 12rem;
+    padding-bottom: 24rem;
+}
+
+@media (max-width: 768px) {
+    .error-page__wrapper {
+        padding-top: 8rem;
+        padding-bottom: 12rem;
+    }
+}
+
+.error-page__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1300px;
+}
+
+@media (max-width: 992px) {
+    .error-page__content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.error-page__status {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+@media (max-width: 992px) {
+    .error-page__status {
+        margin-bottom: 40px;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .error-page__status {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+.error-page__status .four {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 160px;
+    min-width: 160px;
+    height: 216px;
+    background-image: url(../images/4.svg);
+    mix-blend-mode: color-dodge;
+}
+
+@media (max-width: 768px) {
+    .error-page__status .four {
+        width: 100px;
+        min-width: unset;
+        height: 120px;
+    }
+}
+
+.error-page__status .zero {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 166px;
+    min-width: 166px;
+    height: 224px;
+    background-image: url(../images/0.svg);
+    mix-blend-mode: exclusion;
+    margin: 0 24px;
+}
+
+@media (max-width: 768px) {
+    .error-page__status .zero {
+        width: 100px;
+        min-width: unset;
+        height: 120px;
+    }
+}
+
+.error-page__status span {
+    display: block;
+}
+
+.error-page__text {
+    max-width: 506px;
+    padding-left: 24px;
+}
+
+@media (max-width: 992px) {
+    .error-page__text {
+        padding-left: 0;
+        text-align: center;
+    }
+}
+
+.error-page__text .title {
+    font-size: 3.2rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #ECBF61;
+}
+
+.error-page__text .description {
+    font-size: 1.8rem;
+    line-height: 1.44;
+    color: #ffffff;
+    margin-top: 16px;
+}
+
+.error-page__text .link {
+    display: block;
+    width: 200px;
+    margin-top: 64px;
+}
+
+@media (max-width: 992px) {
+    .error-page__text .link {
+        margin: 50px auto 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .error-page__text .link {
+        margin: 30px auto 0;
+    }
+}
+
+/*# sourceMappingURL=404.css.map */

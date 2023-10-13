@@ -1,0 +1,566 @@
+@charset "UTF-8";
+/**
+ * Преобразование пикселей в rem на основе переменной с базовым размером шрифта.
+ * @param  {number} $px Число пикселей (с единицами измерения или без)
+ * @param  {string} Число пикселей, размер контентного шрифта на проекте
+ * @return {string} Результат преобразования $px в rem
+ */
+/*------------------------------------*\
+  # Transitions
+\*------------------------------------*/
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    list-style: none;
+    font-size: 1.4rem;
+    line-height: 1.57;
+}
+
+.pagination-item {
+    margin: 0 3px;
+}
+
+.pagination-item__link {
+    transition: all 0.2s ease-in-out 0s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    color: #ffffff;
+}
+
+.pagination-item__link:hover, .pagination-item__link.active {
+    background: #ECBF61;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.pagination-item__dots {
+    color: #ffffff;
+}
+
+.pagination-item__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.pagination-item__button .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.pagination-item__button svg {
+    width: 100%;
+}
+
+.pagination-item--back {
+    margin-right: 14px;
+}
+
+@media (max-width: 425px) {
+    .pagination-item--back {
+        display: none;
+    }
+}
+
+.pagination-item--back .icon {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.pagination-item--forward {
+    margin-left: 14px;
+}
+
+@media (max-width: 425px) {
+    .pagination-item--forward {
+        display: none;
+    }
+}
+
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.4rem;
+    line-height: 1.57;
+    list-style: none;
+    margin-top: 16px;
+}
+
+.breadcrumbs__item {
+    margin-right: 8px;
+}
+
+.breadcrumbs__item:last-child {
+    margin-right: 0;
+}
+
+.breadcrumbs__link {
+    transition: all 0.2s ease-in-out 0s;
+    color: #ffffff;
+}
+
+.breadcrumbs__link::after {
+    content: "/";
+    margin-left: 8px;
+    color: #ffffff;
+}
+
+.breadcrumbs__link:hover {
+    text-decoration: none;
+    color: #f0b433;
+}
+
+.breadcrumbs__link:hover::after {
+    color: #ffffff;
+}
+
+.breadcrumbs__last {
+    color: #ECBF61;
+}
+
+.projects {
+    position: relative;
+    background-color: #1B1B1B;
+    padding: 96px 0;
+    background-image: url(../images/projects-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+@media (max-width: 1200px) {
+    .projects {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .projects {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects {
+        padding: 20px 0;
+    }
+}
+
+.projects--list {
+    padding-bottom: 0;
+    background-color: transparent;
+    background-image: none;
+}
+
+@media (max-width: 768px) {
+    .projects--list {
+        padding-top: 40px;
+    }
+}
+
+.projects--list:first-of-type {
+    padding-top: 48px;
+}
+
+@media (max-width: 1200px) {
+    .projects--list:first-of-type {
+        padding-top: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .projects--list:first-of-type {
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects--list:first-of-type {
+        padding-top: 20px;
+    }
+}
+
+.projects--list .projects-items {
+    margin-top: 4.8rem;
+}
+
+@media (max-width: 1200px) {
+    .projects--list .projects-items {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects--list .projects-items {
+        margin-top: 30px;
+    }
+}
+
+.projects-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .projects-top {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+.projects-all {
+    transition: all 0.2s ease-in-out 0s;
+    display: inline-block;
+    position: relative;
+    font-size: 1.8rem;
+    line-height: 1.44;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    white-space: nowrap;
+    padding-top: 14px;
+}
+
+@media (max-width: 768px) {
+    .projects-all {
+        align-self: center;
+        margin-top: 15px;
+        padding-top: 10px;
+    }
+}
+
+.projects-all::before {
+    transition: all 0.2s ease-in-out 0s;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: #ECBF61;
+}
+
+@media (max-width: 768px) {
+    .projects-all::before {
+        left: calc(50% - 20px);
+    }
+}
+
+.projects-all:hover {
+    text-decoration: none;
+    color: #ECBF61;
+}
+
+.projects-all:hover::before {
+    left: calc(100% - 40px);
+    background: #ffffff;
+}
+
+.projects-items {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 64px;
+}
+
+@media (max-width: 1200px) {
+    .projects-items {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .projects-items {
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+}
+
+.projects-item {
+    width: calc(100% / 3 - 32px * 2 / 3);
+}
+
+@media (max-width: 1200px) {
+    .projects-item {
+        width: calc(100% / 3 - 20px * 2 / 3);
+    }
+}
+
+@media (max-width: 992px) {
+    .projects-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .projects-item:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.project {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.project:hover {
+    text-decoration: none;
+}
+
+.project:hover .project-overlay {
+    background: rgba(27, 27, 27, 0.9);
+    border-color: #ECBF61;
+}
+
+.project:hover .project-title {
+    opacity: 0;
+}
+
+.project:hover .project-hover {
+    opacity: 1;
+}
+
+.project-image {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.project-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-family: "object-fit:cover";
+    object-fit: cover;
+}
+
+.project-overlay {
+    transition: all 0.2s ease-in-out 0s;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: transparent;
+    background: rgba(27, 27, 27, 0.6);
+}
+
+.project-title {
+    padding-top: 14px;
+    transition: all 0.2s ease-in-out 0s;
+    position: absolute;
+    z-index: 3;
+    right: 24px;
+    bottom: 54px;
+    left: 24px;
+    font-size: 1.6rem;
+    line-height: 1.625;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    opacity: 1;
+    max-width: 368px;
+}
+
+.project-title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    display: block;
+    background: #ECBF61;
+}
+
+@media (max-width: 768px) {
+    .project-title {
+        right: 20px;
+        bottom: 30px;
+        left: 20px;
+    }
+}
+
+.project-hover {
+    transition: all 0.2s ease-in-out 0s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    padding: 84px 24px 26px;
+    opacity: 0;
+}
+
+@media (max-width: 1200px) {
+    .project-hover {
+        padding: 60px 20px 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .project-hover {
+        padding: 20px;
+    }
+}
+
+.project-hover__title {
+    padding-top: 14px;
+    position: relative;
+    font-size: 1.8rem;
+    line-height: 1.44;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ECBF61;
+    margin-bottom: 40px;
+    max-width: 414px;
+}
+
+.project-hover__title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    display: block;
+    background: #ECBF61;
+}
+
+@media (max-width: 1200px) {
+    .project-hover__title {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .project-hover__title {
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-hover__title {
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+.project-hover p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #ffffff;
+    margin-top: 24px;
+    max-width: 414px;
+}
+
+@media (max-width: 1200px) {
+    .project-hover p {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-hover p {
+        max-width: 100%;
+        margin-top: 10px;
+    }
+}
+
+.project-hover__read {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    line-height: 1.57;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 102px;
+}
+
+@media (max-width: 1200px) {
+    .project-hover__read {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 992px) {
+    .project-hover__read {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-hover__read {
+        margin-top: 20px;
+    }
+}
+
+.project-hover__read::after {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    content: "";
+    width: 49px;
+    height: 8px;
+    background-image: url(../images/project-hover__read-arrow.svg);
+}
+
+.list-page {
+    padding-bottom: 96px;
+}
+
+@media (max-width: 1200px) {
+    .list-page {
+        padding-bottom: 70px;
+    }
+}
+
+@media (max-width: 992px) {
+    .list-page {
+        padding-bottom: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .list-page {
+        padding-bottom: 30px;
+    }
+}
+
+.list-page .pagination {
+    margin-top: 6.4rem;
+}
+
+@media (max-width: 768px) {
+    .list-page .pagination {
+        margin-top: 5rem;
+    }
+}
+
+/*# sourceMappingURL=list.css.map */
