@@ -23,19 +23,19 @@ creature: 2020
   <meta name="keywords" content="псков, создание сайтов, интернет реклама, редизайн, раскрутка, продвижение, обслуживание сайтов, администрирование">
   <link rel="canonical" href="">
 
-  <link href="css/plugins.css" type="text/css" rel="stylesheet">
-  <link href="css/styles.css" type="text/css" rel="stylesheet">
+  <link href="/static/dsspskov/css/plugins.css" type="text/css" rel="stylesheet">
+  <link href="/static/dsspskov/css/styles.css" type="text/css" rel="stylesheet">
 
-  <link href="css/404.css" type="text/css" rel="stylesheet">
+  <link href="/static/dsspskov/css/404.css" type="text/css" rel="stylesheet">
 
-  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-  <link rel="manifest" href="favicon/site.webmanifest">
-  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/static/dsspskov/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/dsspskov/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/dsspskov/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/static/dsspskov/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/static/dsspskov/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/static/dsspskov/favicon/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-config" content="favicon/browserconfig.xml">
+  <meta name="msapplication-config" content="/static/dsspskov/favicon/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 
   <!--og-->
@@ -63,8 +63,8 @@ creature: 2020
     <div class="content">
       <header class="header">
         <div class="wrapper header__wrapper">
-          <a href="/" class="header-logo">
-            <img src="images/logo.svg" alt="ДорСтройСервис" title="ДорСтройСервис">
+          <a href="{% url 'index' %}" class="header-logo">
+            <img src="/static/dsspskov/images/logo.svg" alt="ДорСтройСервис" title="ДорСтройСервис">
           </a>
           <div class="header-burger js-burger-open">
             <svg width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -166,7 +166,7 @@ creature: 2020
               <div class="title">Страница не найдена</div>
               <div class="description">К сожалению, страница на которую вы хотели перейти, не найдена. Возможно, был указан некорректный адрес или страница была удалена
               </div>
-              <a href="/" class="btn btn--orange link">На главную</a>
+              <a href="{% url 'index' %}" class="btn btn--orange link">На главную</a>
             </div>
           </div>
         </div>
@@ -185,8 +185,8 @@ creature: 2020
 
     <footer class="footer">
       <div class="wrapper footer__wrapper">
-        <a href="/" class="footer__logo">
-          <img src="images/logo.svg" alt="ДорСтройСервис" title="ДорСтройСервис">
+        <a href="{% url 'index' %}" class="footer__logo">
+          <img src="/static/dsspskov/images/logo.svg" alt="ДорСтройСервис" title="ДорСтройСервис">
         </a>
         <div class="footer-content">
           <div class="footer-content__top">
@@ -194,28 +194,28 @@ creature: 2020
               <ul class="footer-nav__list">
                 <li class="footer-nav__item">
                   <!-- Активному пункту меню вывести класс active -->
-                  <a href="#0" class="footer-nav__link active">Главная</a>
+                  <a href="{% url 'index' %}" class="footer-nav__link active">Главная</a>
                 </li>
                 <li class="footer-nav__item">
-                  <a href="#0" class="footer-nav__link">о нас</a>
+                  <a href="{% url 'about' %}" class="footer-nav__link">о нас</a>
                 </li>
                 <li class="footer-nav__item">
-                  <a href="#0" class="footer-nav__link">услуги</a>
+                  <a href="{% url 'service' %}" class="footer-nav__link">услуги</a>
                 </li>
                 <li class="footer-nav__item">
-                  <a href="#0" class="footer-nav__link">каталог</a>
+                  <a href="{% url 'catalog' %}" class="footer-nav__link">каталог</a>
                 </li>
                 <li class="footer-nav__item">
-                  <a href="#0" class="footer-nav__link">объекты</a>
+                  <a href="{% url 'objects' %}" class="footer-nav__link">объекты</a>
                 </li>
                 <li class="footer-nav__item">
-                  <a href="#0" class="footer-nav__link">новости</a>
+                  <a href="{% url 'news' %}" class="footer-nav__link">новости</a>
                 </li>
                 <li class="footer-nav__item">
-                  <a href="#0" class="footer-nav__link">производственная база</a>
+                  <a href="{% url 'production' %}" class="footer-nav__link">производственная база</a>
                 </li>
                 <li class="footer-nav__item">
-                  <a href="#0" class="footer-nav__link">контакты</a>
+                  <a href="{% url 'contacts' %}" class="footer-nav__link">контакты</a>
                 </li>
               </ul>
             </nav>
@@ -327,14 +327,14 @@ creature: 2020
   <div class="modal mfp-hide" style="display: none;">
     <div class="modal-success">
       <span class="img">
-        <img src="images/modal-success.svg" alt="Ваше сообщение успешно отправлено" title="Ваше сообщение успешно отправлено">
+        <img src="/static/dsspskov/images/modal-success.svg" alt="Ваше сообщение успешно отправлено" title="Ваше сообщение успешно отправлено">
       </span>
       <span class="title">Ваше сообщение успешно отправлено</span>
     </div>
   </div>
 
-  <script src="js/combined.min.js"></script>
-  <script src="js/libs.js"></script>
+  <script src="/static/dsspskov/js/combined.min.js"></script>
+  <script src="/static/dsspskov/js/libs.js"></script>
 
   <div class="counters" hidden>
     <!--    counters    -->

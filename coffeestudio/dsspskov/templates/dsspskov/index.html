@@ -23,19 +23,19 @@ creature: 2020
   <meta name="keywords" content="псков, создание сайтов, интернет реклама, редизайн, раскрутка, продвижение, обслуживание сайтов, администрирование">
   <link rel="canonical" href="">
 
-  <link href="css/plugins.css" type="text/css" rel="stylesheet">
-  <link href="css/styles.css" type="text/css" rel="stylesheet">
+  <link href="/static/dsspskov/css/plugins.css" type="text/css" rel="stylesheet">
+  <link href="/static/dsspskov/css/styles.css" type="text/css" rel="stylesheet">
 
-  <link href="css/index.css" type="text/css" rel="stylesheet">
+  <link href="/static/dsspskov/css/index.css" type="text/css" rel="stylesheet">
 
-  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-  <link rel="manifest" href="favicon/site.webmanifest">
-  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/static/dsspskov/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/dsspskov/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/dsspskov/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/static/dsspskov/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/static/dsspskov/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/static/dsspskov/favicon/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-config" content="favicon/browserconfig.xml">
+  <meta name="msapplication-config" content="/static/dsspskov/favicon/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 
   <!--og-->
@@ -63,8 +63,8 @@ creature: 2020
     <div class="content">
       <header class="header">
         <div class="wrapper header__wrapper">
-          <a href="/" class="header-logo">
-            <img src="images/logo.svg" alt="ДорСтройСервис" title="ДорСтройСервис">
+          <a href="{% url 'index' %}" class="header-logo">
+            <img src="/static/dsspskov/images/logo.svg" alt="ДорСтройСервис" title="ДорСтройСервис">
           </a>
           <div class="header-burger js-burger-open">
             <svg width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -124,28 +124,28 @@ creature: 2020
                 <ul class="header-nav__list">
                   <li class="header-nav__item">
                     <!-- Активному пункту меню вывести класс active -->
-                    <a href="/" class="header-nav__link active">Главная</a>
+                    <a href="{% url 'index' %}" class="header-nav__link active">Главная</a>
                   </li>
                   <li class="header-nav__item">
-                    <a href="#0" class="header-nav__link">о нас</a>
+                    <a href="{% url 'about' %}" class="header-nav__link">о нас</a>
                   </li>
                   <li class="header-nav__item">
-                    <a href="#0" class="header-nav__link">услуги</a>
+                    <a href="{% url 'service' %}" class="header-nav__link">услуги</a>
                   </li>
                   <li class="header-nav__item">
-                    <a href="#0" class="header-nav__link">каталог</a>
+                    <a href="{% url 'catalog' %}" class="header-nav__link">каталог</a>
                   </li>
                   <li class="header-nav__item">
-                    <a href="#0" class="header-nav__link">объекты</a>
+                    <a href="{% url 'objects' %}" class="header-nav__link">объекты</a>
                   </li>
                   <li class="header-nav__item">
-                    <a href="#0" class="header-nav__link">новости</a>
+                    <a href="{% url 'news' %}" class="header-nav__link">новости</a>
                   </li>
                   <li class="header-nav__item">
-                    <a href="#0" class="header-nav__link">производственная база</a>
+                    <a href="{% url 'production' %}" class="header-nav__link">производственная база</a>
                   </li>
                   <li class="header-nav__item">
-                    <a href="#0" class="header-nav__link">контакты</a>
+                    <a href="{% url 'contacts' %}" class="header-nav__link">контакты</a>
                   </li>
                 </ul>
               </nav>
@@ -167,7 +167,7 @@ creature: 2020
               <p>Это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. </p>
               <p>В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.</p>
               <!-- Текст из админки end -->
-              <a href="#0" class="btn btn--orange intro-content__btn">Подробнее</a>
+              <a href="{% url 'about' %}" class="btn btn--orange intro-content__btn">Подробнее</a>
             </div>
           </div>
         </div>
@@ -175,26 +175,26 @@ creature: 2020
           <div class="swiper-wrapper no-swiping">
             <div class="swiper-slide intro-slider__slide">
               <picture>
-                <source srcset="images/intro-slide-1.webp" type="image/webp">
-                <img src="images/intro-slide-1.jpg" alt="slide_title">
+                <source srcset="/static/dsspskov/images/intro-slide-1.webp" type="image/webp">
+                <img src="/static/dsspskov/images/intro-slide-1.jpg" alt="slide_title">
               </picture>
             </div>
             <div class="swiper-slide intro-slider__slide">
               <picture>
-                <source srcset="images/intro-slide-2.webp" type="image/webp">
-                <img src="images/intro-slide-2.jpg" alt="slide_title">
+                <source srcset="/static/dsspskov/images/intro-slide-2.webp" type="image/webp">
+                <img src="/static/dsspskov/images/intro-slide-2.jpg" alt="slide_title">
               </picture>
             </div>
             <div class="swiper-slide intro-slider__slide">
               <picture>
-                <source srcset="images/intro-slide-3.webp" type="image/webp">
-                <img src="images/intro-slide-3.jpg" alt="slide_title">
+                <source srcset="/static/dsspskov/images/intro-slide-3.webp" type="image/webp">
+                <img src="/static/dsspskov/images/intro-slide-3.jpg" alt="slide_title">
               </picture>
             </div>
             <div class="swiper-slide intro-slider__slide">
               <picture>
-                <source srcset="images/intro-slide-4.webp" type="image/webp">
-                <img src="images/intro-slide-4.jpg" alt="slide_title">
+                <source srcset="/static/dsspskov/images/intro-slide-4.webp" type="image/webp">
+                <img src="/static/dsspskov/images/intro-slide-4.jpg" alt="slide_title">
               </picture>
             </div>
           </div>
@@ -224,8 +224,8 @@ creature: 2020
               <a href="#0" class="project">
                 <div class="project-image">
                   <picture>
-                    <source srcset="images/project-1.webp" type="image/webp">
-                    <img src="images/project-1.jpg" alt="Реконструкция участка трассы М60">
+                    <source srcset="/static/dsspskov/images/project-1.webp" type="image/webp">
+                    <img src="/static/dsspskov/images/project-1.jpg" alt="Реконструкция участка трассы М60">
                   </picture>
                 </div>
                 <div class="project-overlay"></div>
@@ -250,8 +250,8 @@ creature: 2020
               <a href="#0" class="project">
                 <div class="project-image">
                   <picture>
-                    <source srcset="images/project-2.webp" type="image/webp">
-                    <img src="images/project-2.jpg" alt="Строительство автомобильной дороги в пгт Бежаницы">
+                    <source srcset="/static/dsspskov/images/project-2.webp" type="image/webp">
+                    <img src="/static/dsspskov/images/project-2.jpg" alt="Строительство автомобильной дороги в пгт Бежаницы">
                   </picture>
                 </div>
                 <div class="project-overlay"></div>
@@ -276,8 +276,8 @@ creature: 2020
               <a href="#0" class="project">
                 <div class="project-image">
                   <picture>
-                    <source srcset="images/project-3.webp" type="image/webp">
-                    <img src="images/project-3.jpg" alt="Реконструкция участка трассы М60">
+                    <source srcset="/static/dsspskov/images/project-3.webp" type="image/webp">
+                    <img src="/static/dsspskov/images/project-3.jpg" alt="Реконструкция участка трассы М60">
                   </picture>
                 </div>
                 <div class="project-overlay"></div>
@@ -312,26 +312,26 @@ creature: 2020
             <div class="swiper-wrapper">
               <div class="production-slide swiper-slide">
                 <picture>
-                  <source srcset="images/production-slide-1.webp" type="image/webp">
-                  <img src="images/production-slide-1.jpg" alt="production-slide_alt">
+                  <source srcset="/static/dsspskov/images/production-slide-1.webp" type="image/webp">
+                  <img src="/static/dsspskov/images/production-slide-1.jpg" alt="production-slide_alt">
                 </picture>
               </div>
               <div class="production-slide swiper-slide">
                 <picture>
-                  <source srcset="/static/images/production-slide-2.webp" type="image/webp">
-                  <img src="images/production-slide-2.jpg" alt="production-slide_alt">
+                  <source srcset="/static/dsspskov/images/production-slide-2.webp" type="image/webp">
+                  <img src="/static/dsspskov/images/production-slide-2.jpg" alt="production-slide_alt">
                 </picture>
               </div>
               <div class="production-slide swiper-slide">
                 <picture>
-                  <source srcset="images/production-slide-3.webp" type="image/webp">
-                  <img src="images/production-slide-3.jpg" alt="production-slide_alt">
+                  <source srcset="/static/dsspskov/images/production-slide-3.webp" type="image/webp">
+                  <img src="/static/dsspskov/images/production-slide-3.jpg" alt="production-slide_alt">
                 </picture>
               </div>
               <div class="production-slide swiper-slide">
                 <picture>
-                  <source srcset="images/production-slide-4.webp" type="image/webp">
-                  <img src="images/production-slide-4.jpg" alt="production-slide_alt">
+                  <source srcset="/static/dsspskov/images/production-slide-4.webp" type="image/webp">
+                  <img src="/static/dsspskov/images/production-slide-4.jpg" alt="production-slide_alt">
                 </picture>
               </div>
             </div>
@@ -393,8 +393,8 @@ creature: 2020
 
     <footer class="footer">
       <div class="wrapper footer__wrapper">
-        <a href="/" class="footer__logo">
-          <img src="images/logo.svg" alt="ДорСтройСервис" title="ДорСтройСервис">
+        <a href="{% url 'index' %}" class="footer__logo">
+          <img src="/static/dsspskov/images/logo.svg" alt="ДорСтройСервис" title="ДорСтройСервис">
         </a>
         <div class="footer-content">
           <div class="footer-content__top">
@@ -402,28 +402,28 @@ creature: 2020
               <ul class="footer-nav__list">
                 <li class="footer-nav__item">
                   <!-- Активному пункту меню вывести класс active -->
-                  <a href="#0" class="footer-nav__link active">Главная</a>
+                  <a href="{% url 'index' %}" class="footer-nav__link active">Главная</a>
                 </li>
                 <li class="footer-nav__item">
-                  <a href="#0" class="footer-nav__link">о нас</a>
+                  <a href="{% url 'about' %}" class="footer-nav__link">о нас</a>
                 </li>
                 <li class="footer-nav__item">
-                  <a href="#0" class="footer-nav__link">услуги</a>
+                  <a href="{% url 'service' %}" class="footer-nav__link">услуги</a>
                 </li>
                 <li class="footer-nav__item">
-                  <a href="#0" class="footer-nav__link">каталог</a>
+                  <a href="{% url 'catalog' %}" class="footer-nav__link">каталог</a>
                 </li>
                 <li class="footer-nav__item">
-                  <a href="#0" class="footer-nav__link">объекты</a>
+                  <a href="{% url 'objects' %}" class="footer-nav__link">объекты</a>
                 </li>
                 <li class="footer-nav__item">
-                  <a href="#0" class="footer-nav__link">новости</a>
+                  <a href="{% url 'news' %}" class="footer-nav__link">новости</a>
                 </li>
                 <li class="footer-nav__item">
-                  <a href="#0" class="footer-nav__link">производственная база</a>
+                  <a href="{% url 'production' %}" class="footer-nav__link">производственная база</a>
                 </li>
                 <li class="footer-nav__item">
-                  <a href="#0" class="footer-nav__link">контакты</a>
+                  <a href="{% url 'contacts' %}" class="footer-nav__link">контакты</a>
                 </li>
               </ul>
             </nav>
@@ -535,16 +535,16 @@ creature: 2020
   <div class="modal mfp-hide" style="display: none;">
     <div class="modal-success">
       <span class="img">
-        <img src="images/modal-success.svg" alt="Ваше сообщение успешно отправлено" title="Ваше сообщение успешно отправлено">
+        <img src="/static/dsspskov/images/modal-success.svg" alt="Ваше сообщение успешно отправлено" title="Ваше сообщение успешно отправлено">
       </span>
       <span class="title">Ваше сообщение успешно отправлено</span>
     </div>
   </div>
 
-  <script src="js/combined.min.js"></script>
-  <script src="js/libs.js"></script>
+  <script src="/static/dsspskov/js/combined.min.js"></script>
+  <script src="/static/dsspskov/js/libs.js"></script>
 
-  <script src="js/index-scripts.js"></script>
+  <script src="/static/dsspskov/js/index-scripts.js"></script>
 
   <div class="counters" hidden>
     <!--    counters    -->
