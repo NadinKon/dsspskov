@@ -158,14 +158,12 @@ creature: 2020
         <div class="intro-content">
           <div class="wrapper intro-content__wrapper">
             <div class="header-block intro-content__title">
-              <h1>Ремонт и обслуживание дорог</h1>
+              <h1>{{ about_text.title }}</h1>
               <div class="header-block__text header-block__text--1">Ремонт <br> и обслуживание дорог</div>
             </div>
             <div class="intro-content__text">
               <!-- Текст из админки start -->
-              <p>Компания “ДорСтройСервис” занимается производством и укладкой асфальта, а так же ремонтом и обслуживанием дорог</p>
-              <p>Это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. </p>
-              <p>В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.</p>
+              {{ about_text.description|linebreaks }}
               <!-- Текст из админки end -->
               <a href="{% url 'about' %}" class="btn btn--orange intro-content__btn">Подробнее</a>
             </div>
@@ -220,6 +218,7 @@ creature: 2020
             <a href="#0" class="projects-all">Все проекты</a>
           </div>
           <ul class="projects-items">
+            {% for n in news %}
             <li class="projects-item">
               <a href="#0" class="project">
                 <div class="project-image">
