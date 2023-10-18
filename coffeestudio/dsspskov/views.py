@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic.base import View
+from django.views.generic import ListView
 from .models import *
 from .forms import FeedbackForm
 
@@ -54,7 +55,7 @@ class ObjectsListView(View):
         return render(request, 'dsspskov/objects.html')
 
 
-class NewsListView(View):
+class NewsListView(ListView):
     def get(self, request):
         news = NewsList.objects.filter(is_published=True)
         return render(request, 'dsspskov/list.html', {'news': news})

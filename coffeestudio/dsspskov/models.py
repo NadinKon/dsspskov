@@ -43,10 +43,10 @@ class AboutText(models.Model):
 
 
 class Feedback(models.Model):
-    name = models.CharField(max_length=100)
-    phone = models.CharField(max_length=18)
-    email = models.EmailField(blank=True, null=True)
-    message = models.TextField(blank=True)
+    name = models.CharField(max_length=100, verbose_name='Имя')
+    phone = models.CharField(max_length=18, verbose_name='Телефон')
+    email = models.EmailField(blank=True, null=True, verbose_name='Почта')
+    message = models.TextField(blank=True, verbose_name='Сообщение')
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
