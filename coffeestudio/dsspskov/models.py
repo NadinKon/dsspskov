@@ -42,7 +42,19 @@ class AboutText(models.Model):
         verbose_name_plural = 'О нас'
 
 
+class Feedback(models.Model):
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=18)
+    email = models.EmailField(blank=True, null=True)
+    message = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f'{self.name}'
+
+    class Meta:
+        verbose_name = 'Обратная связь'
+        verbose_name_plural = 'Обратная связь'
 
 
 

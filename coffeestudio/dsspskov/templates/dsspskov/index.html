@@ -163,7 +163,7 @@ creature: 2020
             </div>
             <div class="intro-content__text">
               <!-- Текст из админки start -->
-              {{ about_text.description|linebreaks }}
+              {{ about_text.description|linebreaks|truncatewords:50 }}
               <!-- Текст из админки end -->
               <a href="{% url 'about' %}" class="btn btn--orange intro-content__btn">Подробнее</a>
             </div>
@@ -223,20 +223,21 @@ creature: 2020
               <a href="#0" class="project">
                 <div class="project-image">
                   <picture>
-                    <source srcset="/static/dsspskov/images/project-1.webp" type="image/webp">
-                    <img src="/static/dsspskov/images/project-1.jpg" alt="Реконструкция участка трассы М60">
+                    {% if n.photo %}
+                  <img src="{{ n.photo.url }}" alt="{{ n.title }}">
+                      {% else %}
+            <!-- Здесь можно добавить изображение по умолчанию или оставить блок пустым -->
+            <img src="/static/dsspskov/images/project-1.jpg" alt="{{ n.title }}">
+                    {% endif %}
                   </picture>
                 </div>
                 <div class="project-overlay"></div>
-                <h3 class="project-title">Реконструкция участка трассы М60</h3>
+                <h3 class="project-title">{{ n.title }}</h3>
                 <div class="project-hover">
                   <div>
-                    <h3 class="project-hover__title">Реконструкция участка трассы М60</h3>
+                    <h3 class="project-hover__title">{{ n.title }}</h3>
                     <!-- Текст из админки start -->
-                    <p>Это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
-                      текстов на латинице с начала XVI века.</p>
-                    <p>В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum
-                      для распечатки образцов.</p>
+                    <p>{{ n.content|linebreaks|truncatewords:20 }}</p>
                     <!-- Текст из админки end -->
                   </div>
                   <div class="project-hover__read">
@@ -245,58 +246,8 @@ creature: 2020
                 </div>
               </a>
             </li>
-            <li class="projects-item">
-              <a href="#0" class="project">
-                <div class="project-image">
-                  <picture>
-                    <source srcset="/static/dsspskov/images/project-2.webp" type="image/webp">
-                    <img src="/static/dsspskov/images/project-2.jpg" alt="Строительство автомобильной дороги в пгт Бежаницы">
-                  </picture>
-                </div>
-                <div class="project-overlay"></div>
-                <h3 class="project-title">Строительство автомобильной дороги в пгт Бежаницы</h3>
-                <div class="project-hover">
-                  <div>
-                    <h3 class="project-hover__title">Строительство автомобильной дороги в пгт Бежаницы</h3>
-                    <!-- Текст из админки start -->
-                    <p>Это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
-                      текстов на латинице с начала XVI века.</p>
-                    <p>В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum
-                      для распечатки образцов.</p>
-                    <!-- Текст из админки end -->
-                  </div>
-                  <div class="project-hover__read">
-                    Читать
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="projects-item">
-              <a href="#0" class="project">
-                <div class="project-image">
-                  <picture>
-                    <source srcset="/static/dsspskov/images/project-3.webp" type="image/webp">
-                    <img src="/static/dsspskov/images/project-3.jpg" alt="Реконструкция участка трассы М60">
-                  </picture>
-                </div>
-                <div class="project-overlay"></div>
-                <h3 class="project-title">Реконструкция автомобильной дороги на улице Космонавтов</h3>
-                <div class="project-hover">
-                  <div>
-                    <h3 class="project-hover__title">Реконструкция автомобильной дороги на улице Космонавтов</h3>
-                    <!-- Текст из админки start -->
-                    <p>Это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
-                      текстов на латинице с начала XVI века.</p>
-                    <p>В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum
-                      для распечатки образцов.</p>
-                    <!-- Текст из админки end -->
-                  </div>
-                  <div class="project-hover__read">
-                    Читать
-                  </div>
-                </div>
-              </a>
-            </li>
+            {% endfor %}
+
           </ul>
         </div>
       </section>
@@ -495,30 +446,32 @@ creature: 2020
     <div class="header-block">
       <div class="header-block__text header-block__text--2 header-block__text--black">Форма <br> обратной связи</div>
     </div>
-    <form action="#0">
+    <form action="{% url 'index' %}" method="post">
+      {% csrf_token %}
       <div class="modal-form">
         <div class="required-fields__message"><span>*</span> - поля, обязательные для заполнения</div>
 
         <label class="input-group">
-          <!-- Errorlist сюда -->
-          <input type="text" class="input-group__input" placeholder="Сергеев Михаил" required>
+          {{ form.name.errors }}
+          <input type="text" name="{{ form.name.name }}" class="input-group__input" placeholder="Сергеев Михаил" value="{{ form.name.value|default:'' }}" required>
           <span class="input-group__title">Имя</span>
         </label>
         <label class="input-group">
-          <!-- Errorlist сюда -->
-          <input type="tel" class="input-group__input" placeholder="8 (954) 342-11-23" required>
+          {{ form.phone.errors }}
+          <input type="tel" name="{{ form.phone.name }}" class="input-group__input" placeholder="8 (954) 342-11-23" value="{{ form.phone.value }}" required>
           <span class="input-group__title">Телефон</span>
         </label>
         <label class="input-group">
-          <!-- Errorlist сюда -->
-          <input type="email" class="input-group__input" placeholder="adret1224@mail.ru">
+          {{ form.email.errors }}
+          <input type="email" name="{{ form.email.name }}" class="input-group__input" placeholder="adres1224@mail.ru" value="{{ form.email.value|default:'' }}">
           <span class="input-group__title">E-mail</span>
         </label>
         <label class="input-group">
-          <!-- Errorlist сюда -->
-          <textarea class="input-group__textarea" placeholder="Текст вопроса"></textarea>
+          {{ form.message.errors }}
+          <textarea name="{{ form.message.name }}" class="input-group__textarea" placeholder="Текст вопроса">{{ form.message.value|default:'' }}</textarea>
           <span class="input-group__title">Вопрос</span>
         </label>
+
 
         <div class="modal-form__policy">Отправляя форму, я соглашаюсь с
           <a href="#0">политикой обработки персональных данных</a>
@@ -531,7 +484,7 @@ creature: 2020
   </div>
 
   <!-- Успешная отправка -->
-  <div class="modal mfp-hide" style="display: none;">
+  <div class="modal mfp-hide" id="success-modal" style="display: none;">
     <div class="modal-success">
       <span class="img">
         <img src="/static/dsspskov/images/modal-success.svg" alt="Ваше сообщение успешно отправлено" title="Ваше сообщение успешно отправлено">

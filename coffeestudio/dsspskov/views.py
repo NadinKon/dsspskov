@@ -1,15 +1,33 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.base import View
 from .models import *
+from .forms import FeedbackForm
 
 class IndexView(View):
     def get(self, request):
         about_text = AboutText.objects.first()
         news = NewsList.objects.filter(is_published=True)[:3]
+        form = FeedbackForm()
         context = {
             'about_text': about_text,
-            'news': news
+            'news': news,
+            'form': form
+        }
+        return render(request, 'dsspskov/index.html', context)
+
+    def post(self, request):
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+
+        about_text = AboutText.objects.first()
+        news = NewsList.objects.filter(is_published=True)[:3]
+        context = {
+            'about_text': about_text,
+            'news': news,
+            'form': form
         }
         return render(request, 'dsspskov/index.html', context)
 

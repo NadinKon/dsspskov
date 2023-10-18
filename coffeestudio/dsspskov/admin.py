@@ -18,3 +18,8 @@ class ServiceAdmin(admin.ModelAdmin):
 @admin.register(AboutText)
 class AboutTextAdmin(admin.ModelAdmin):
     list_display = ['title', 'description']
+
+
+@admin.register(Feedback)
+class FeedbackAdmin(admin.ModelAdmin):
+    list_display = ['name', 'phone', 'message']
