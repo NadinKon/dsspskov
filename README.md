@@ -1,10 +1,12 @@
 ### Установка
 Клонируйте репозиторий [https://github.com/NadinKon/test_FastAPI](https://github.com/NadinKon/dsspskov.git) <br>
+
 Установите зависимости с помощью pip: <br>
 pip install -r requirements.txt
 
 
 **Создайте файл .env в корневом каталоге проекта с содержимым:**<br>
+
 DATABASE_NAME=your_name<br>
 DATABASE_USER=your_user<br>
 DATABASE_PASSWORD=your_password<br>
