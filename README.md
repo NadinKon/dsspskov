@@ -5,7 +5,7 @@
 pip install -r requirements.txt
 
 
-**Создайте файл .env в корневом каталоге проекта с содержимым:**<br>
+**Создайте файл .env в корневом каталоге проекта с содержимым:** <br>
 
 DATABASE_NAME=your_name<br>
 DATABASE_USER=your_user<br>
